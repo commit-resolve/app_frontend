@@ -8,14 +8,18 @@ export default function Index() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!loading) {
-      if (user) {
-        router.replace('/(tabs)/home');
-      } else {
-        router.replace('/(auth)/login');
-      }
-    }
-  }, [user, loading]);
+    // TEMPORARILY BYPASS LOGIN - Go directly to app
+    router.replace('/(tabs)/home');
+    
+    // ORIGINAL CODE (commented for testing):
+    // if (!loading) {
+    //   if (user) {
+    //     router.replace('/(tabs)/home');
+    //   } else {
+    //     router.replace('/(auth)/login');
+    //   }
+    // }
+  }, []);
 
   return (
     <View style={styles.container}>
